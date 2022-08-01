@@ -18,7 +18,7 @@ def viewworkouts(request):
 
 def selectworkouts(request, selectedworkout):
     try:
-        result = workouts[selectedworkout]
+        result = request[selectedworkout]
         return HttpResponse(result)
     except KeyError:
         return HttpResponseNotFound("Workout not found!!!")

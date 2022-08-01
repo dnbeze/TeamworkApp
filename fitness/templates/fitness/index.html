@@ -1,1 +1,15 @@
-<h1>hello</h1
+{% extends 'base.html' %}
+{% block title %}Exercises ROCK{% endblock %}
+    {% block content %}
+        <h1>Exercises ROCK</h1>
+        <ul>
+            {% for exercise in exercises %}
+                <li>{{ exercise.name }}</li>
+            {% endfor %}
+        </ul>
+    {% endblock %}
+
+{% for workouts in Exercises %}
+        <h2>{{ workouts.name }}</h2>
+        <p>{{ workouts.description }}</p>
+{% endfor %}
