@@ -1,15 +1,14 @@
-{% extends 'base.html' %}
-{% block title %}Exercises ROCK{% endblock %}
-    {% block content %}
-        <h1>Exercises ROCK</h1>
-        <ul>
-            {% for exercise in exercises %}
-                <li>{{ exercise.name }}</li>
-            {% endfor %}
-        </ul>
-    {% endblock %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Teamwork Fitness HTML Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-{% for workouts in Exercises %}
-        <h2>{{ workouts.name }}</h2>
-        <p>{{ workouts.description }}</p>
-{% endfor %}
+    <title>Teamwork Fitness</title>
+
+    <!-- Favicon -->{% static 'fitness/'%}
+    <link rel="icon" href="{% static 'images/logo.svg' %}">
+
+    
