@@ -22,3 +22,15 @@ class Exercises(models.Model):
     text = models.TextField()
     def __str__(self):
         return self.name
+
+
+class User(models.Model):
+    UserID =
+    Username = 
+    Password = 
+
+class Userinfo
+
+class Workout
+
+class Workoutdetail
