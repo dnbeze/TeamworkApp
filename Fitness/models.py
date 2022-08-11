@@ -8,7 +8,7 @@ from django.contrib.auth.models import AbstractBaseUser
 class FitUser(AbstractBaseUser):
     username = models.CharField(max_length=30, unique=True)
     email = models.EmailField(max_length=254, unique=True)
-    first_name = models.CharField(max_length=30
+    first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
@@ -29,21 +29,21 @@ class FitUser(AbstractBaseUser):
 class Workout(models.Model):
     owner = models.ForeignKey(FitUser, on_delete=models.CASCADE)
     workoutid = models.AutoField(primary_key=True)
-    weight = models.IntegerField(blank=true)
-    reps = models.IntegerField(blank=true)
-    date = models.DateField(blank=True)
+    weight = models.IntegerField(blank=True)
+    reps = models.IntegerField(blank=True)
+    date = models.DateField(auto_now_add=True)
 
     def __str__(self):
         return self.workout
 
 
 class WorkoutDetail(models.Model):
-    workout = models.models.OneToOneField(Workout, on_delete=models.CASCADE)
+    workout = models.OneToOneField(Workout, on_delete=models.CASCADE)
     workoutdetailid = models.AutoField(primary_key=True)
     exercise = models.CharField(max_length=30)
-    weight = models.IntegerField(blank=true)
-    reps = models.IntegerField(blank=true)
-    date = models.DateField(blank=True)
+    weight = models.IntegerField(blank=True)
+    reps = models.IntegerField(blank=True)
+    
 
     def __str__(self):
         return self.exercise
